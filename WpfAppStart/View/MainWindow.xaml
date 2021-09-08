@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfAppStart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppStart"
+        mc:Ignorable="d"
+        Title="Histórico"
+        Background="Black" Foreground="White" WindowState="Maximized">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" 
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Visible"
+                      Background="Black">
+
+            <DataGrid ItemsSource="{Binding Orders}" 
+                      AutoGenerateColumns="true"
+                      RowBackground="Black"
+                      Background="Black"
+                      Foreground="Orange"
+                      IsReadOnly="True" FontSize="9" FontFamily="Times New Roman" BorderBrush="#FF010408">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="DATA E HORA" Width="100" Binding="{Binding DataHora}"  />
+                    <DataGridTextColumn Header="ASSESOR" Width="80" Binding="{Binding Assessor}" />
+                    <DataGridTextColumn Header="CONTA" Width="100" Binding="{Binding Conta}" />
+                    <DataGridTextColumn Header="ATIVO" Width="80" Binding="{Binding Ativo}" />
+                    <DataGridTextColumn Header="TIPO" Width="40" Binding="{Binding Tipo}" />
+                    <DataGridTextColumn Header="QTD." Width="50" Binding="{Binding Qtd}" />
+                    <DataGridTextColumn Header="QTD.APARENTE" Width="100" Binding="{Binding QtdAparente}" />
+                    <DataGridTextColumn Header="QTD.DISP" Width="70" Binding="{Binding QtdDisp}" />
+                    <DataGridTextColumn Header="QTD.CANCEL" Width="80" Binding="{Binding QtdCancel}" />
+                    <DataGridTextColumn Header="QTD.EXEC" Width="150" Binding="{Binding QtdExec}" />
+                    <DataGridTextColumn Header="VALOR" Width="150" Binding="{Binding Valor}" />
+                    <DataGridTextColumn Header="VALOR DISP" Width="150" Binding="{Binding ValorDisp}" />
+                    <DataGridTextColumn Header="OBJETIVO" Width="150" Binding="{Binding Objetivo}" />
+                    <DataGridTextColumn Header="OBJ.DISP" Width="150" Binding="{Binding ObjDisp}" />
+                    <DataGridTextColumn Header="REDUÇÃO" Width="150" Binding="{Binding Reducao}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>
