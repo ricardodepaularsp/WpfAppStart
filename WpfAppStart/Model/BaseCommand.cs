@@ -17,5 +17,6 @@ namespace WpfAppStart
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
+
     }
 }
